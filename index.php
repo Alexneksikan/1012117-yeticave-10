@@ -47,6 +47,19 @@ $user_name = 'Александр'; // укажите здесь ваше имя
 ];
 ?>
 
+<?php 
+function formatPrice($lot_price)
+{
+    $lot_price = ceil($lot_price);
+    
+    if ($lot_price < 1000) { 
+        return $lot_price . ' ₽';
+    }
+    else {
+        return number_format($lot_price, 0, '', ' ') . ' ₽';
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -128,7 +141,7 @@ $user_name = 'Александр'; // укажите здесь ваше имя
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=$lot['price']; ?></span>
+                            <span class="lot__cost"><?=formatPrice($lot['price']); ?></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
