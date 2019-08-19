@@ -52,12 +52,11 @@ function formatPrice($lot_price)
 {
     $lot_price = ceil($lot_price);
     
-    if ($lot_price < 1000) { 
-        return $lot_price . ' ₽';
+    if ($lot_price >= 1000) { 
+        $lot_price = number_format($lot_price, 0, '', ' ');
     }
-    else {
-        return number_format($lot_price, 0, '', ' ') . ' ₽';
-    }
+
+    return $lot_price . ' ₽';
 }
 ?>
 
