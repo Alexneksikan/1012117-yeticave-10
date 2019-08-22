@@ -22,7 +22,7 @@ $lots_info = [
                 'category' => 'Доски и лыжи',
                 'price' => 159999,
                 'url' => 'img/lot-2.jpg',
-                'finish_date' => '2019-08-22'
+                'finish_date' => '2019-08-23'
             ],
             [
                 'name' => 'Крепления Union Contact Pro 2015 года размер L/XL',
@@ -74,8 +74,8 @@ function get_dt_range($f_date)
     $period_hour = floor($period / 3600);
     $period_min = floor(($period - $period_hour * 3600) / 60);
     $h_m = [
-        str_pad($period_hour, 2, "0", STR_PAD_LEFT),
-        str_pad($period_min, 2, "0", STR_PAD_LEFT)
+        'hours'     => str_pad($period_hour, 2, "0", STR_PAD_LEFT),
+        'minutes'   => str_pad($period_min,  2, "0", STR_PAD_LEFT)
     ];
     return $h_m;
 }

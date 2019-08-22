@@ -30,8 +30,13 @@
                             <span class="lot__cost"><?=formatPrice($lot['price']); ?></span>
                         </div>
                     </div>
-                    <div class="lot__timer timer <?php if (get_dt_range($lot['finish_date'])[0] == '00') {print('timer--finishing');} ?>">
-                            <?php print((get_dt_range($lot['finish_date'])[0] . ' : ' . get_dt_range($lot['finish_date'])[1])); ?>
+                    <?php
+                        $timer = get_dt_range($lot['finish_date']);
+                        $hours = $timer['hours'];
+                        $minutes = $timer['minutes'];
+                    ?>
+                    <div class="lot__timer timer <?php if ($hours == '00') {print('timer--finishing');} ?>">
+                            <?php print($hours . ' : ' . $minutes); ?>
                     </div>
                 </div>
                 </li>
