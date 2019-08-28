@@ -15,17 +15,18 @@ CREATE TABLE users (
 CREATE TABLE categories (
   id			INT(2) AUTO_INCREMENT PRIMARY KEY,
   name			CHAR(20),
-  cymbol_code	CHAR(10)
+  symbol_code	CHAR(10)
 );
 
 CREATE TABLE lots (
   id 			INT AUTO_INCREMENT PRIMARY KEY,
   name 			CHAR(50) NOT NULL,
-  description 	VARCHAR(300) NOT NULL,
+  description 	VARCHAR(500) NOT NULL,
   image 		CHAR(25) NOT NULL,
   category 		INT(1) NOT NULL,
   start_date 	TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   start_price 	DECIMAL(10,2) NOT NULL,
+  finish_date   DATE,
   finish_price 	DECIMAL(10,2),
   step 			INT NOT NULL,
   author 		INT,
